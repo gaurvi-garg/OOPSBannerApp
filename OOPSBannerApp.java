@@ -1,18 +1,60 @@
 public class OOPSBannerApp {
-    public static void main(String[] args) {
-        // Initialize banner lines using String.join() for conciseness
-        String[] banner = {
-            String.join("", "H   H", " EEEEE", " L     ", " L     ", " OOO  "),
-            String.join("", "H   H", " E    ", " L     ", " L     ", "O   O "),
-            String.join("", "HHHHH", " EEEE ", " L     ", " L     ", "O   O "),
-            String.join("", "H   H", " E    ", " L     ", " L     ", "O   O "),
-            String.join("", "H   H", " EEEEE", " LLLLL ", " LLLLL ", " OOO  ")
-        };
 
-        // Enhanced for loop to print banner
+    public static void main(String[] args) {
+
+        String[] o = buildO();
+        String[] p = buildP();
+        String[] s = buildS();
+
+        String[] banner = new String[o.length];
+
+        for (int i = 0; i < o.length; i++) {
+            banner[i] = o[i] + "  " + o[i] + "  " + p[i] + "  " + s[i];
+        }
+
+        // Print using enhanced for-loop
         for (String line : banner) {
             System.out.println(line);
         }
+    }
+
+    // Static helper method for O
+    public static String[] buildO() {
+        return new String[] {
+            "  OOO  ",
+            " O   O ",
+            " O   O ",
+            " O   O ",
+            " O   O ",
+            "  OOO  ",
+            "       "
+        };
+    }
+
+    // Static helper method for P
+    public static String[] buildP() {
+        return new String[] {
+            " PPPP  ",
+            " P   P ",
+            " PPPP  ",
+            " P     ",
+            " P     ",
+            " P     ",
+            "       "
+        };
+    }
+
+    // Static helper method for S
+    public static String[] buildS() {
+        return new String[] {
+            "  SSSS ",
+            " S     ",
+            "  SSS  ",
+            "     S ",
+            "     S ",
+            " SSSS  ",
+            "       "
+        };
     }
 }
 
